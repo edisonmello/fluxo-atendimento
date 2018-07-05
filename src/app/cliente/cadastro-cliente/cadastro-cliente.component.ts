@@ -20,18 +20,18 @@ export class CadastroClienteComponent implements OnInit {
   ngOnInit() {
   let self = this;
   
-  setTimeout(() => {
-    self.cliente = "Proprietario iniciando...";
-    self.imagem = "assets/Neymar_em_pe.jpg";
-  },1000);
+  // setTimeout(() => {
+  //   self.cliente = "Proprietario iniciando...";
+  //   self.imagem = "assets/Neymar_em_pe.jpg";
+  // },1000);
 
-  let interval = setInterval(() => {
-    self.cliente = "Proprietario " + self.contador++;
-    if (self.contador == 5) {
-      clearInterval(interval);
-      self.imagem = "assets/Neymar_deitado.jpg";
-    }
-  },2000);
+  // let interval = setInterval(() => {
+  //   self.cliente = "Proprietario " + self.contador++;
+  //   if (self.contador == 5) {
+  //     clearInterval(interval);
+  //     self.imagem = "assets/Neymar_deitado.jpg";
+  //   }
+  // },2000);
 
   if (this.pessoa == null) {
        this.pessoa = new Pessoa();
@@ -39,6 +39,7 @@ export class CadastroClienteComponent implements OnInit {
        this.pessoa.tipoPessoa = TipoPessoa.Juridica;
   }
 
+  this.svcCliente.getClientes();
   }
 
   
