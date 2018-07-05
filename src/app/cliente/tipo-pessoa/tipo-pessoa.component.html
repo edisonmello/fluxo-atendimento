@@ -1,6 +1,11 @@
-<fieldset>
-    <legend>Tipo de pessoa</legend>
-    <label><input type="radio" name="rdoTipoPessoa" />Física </label>
-    <label><input type="radio" name="rdoTipoPessoa" />Jurídica </label>
-    <label><input type="radio" name="rdoTipoPessoa" />Outros </label>              
-</fieldset>
+
+     <label *ngFor="let auxtipoPessoa of listaTipoPessoa">
+        <input  type="radio" [value]="auxtipoPessoa.Codigo" [(ngModel)]="tipoPessoa"  (change)="alterarValor()" />
+        {{auxtipoPessoa.descricao}}
+
+    </label>
+    <!-- <label><input type="radio" name="rdoTipoPessoa"  [value]="1" [(ngModel)]="tipoPessoa"  (change)="alterarValor()" />Física </label>
+    <label><input type="radio" name="rdoTipoPessoa" [value]="2" [(ngModel)]="tipoPessoa"  (change)="alterarValor()"/>Jurídica </label>
+    <label><input type="radio" name="rdoTipoPessoa" [value]="3" [(ngModel)]="tipoPessoa"  (change)="alterarValor()"/>Outros </label>               -->
+
+{{ tipoPessoa }}
